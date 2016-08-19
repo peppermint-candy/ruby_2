@@ -1,0 +1,54 @@
+<h1>Welcome! </h1>
+
+<fieldset class="box">
+  <legend>Register</legend>
+  <form action="/users" method="post">
+    <input type="hidden" name="authenticity_token" value="form_authenticity_token" />
+
+    <p>
+      <label>Name:</label>
+      <input type="text" name="name" />
+    </p>
+    <p>
+      <label>Email:</label>
+      <input type="email" name="email" />
+    </p>
+    <p>
+      <label>Password:</label>
+      <input type="password" name="password" />
+      <h6>*Password should be at least 8 characters</h6>
+    </p>
+    <p>
+      <label>Confirm Password:</label>
+      <input type="password" name="password_confirmation" />
+    </p>
+    <p>
+      <label>Description:</label>
+      <textarea name="desc" cols="45" rows="5"></textarea>
+
+    </p>
+
+    <p>
+      <input type="submit" value="Register" />
+    </p>
+  </form>
+</fieldset>
+
+<fieldset class="box">
+  <legend>Login</legend>
+  <form action="/sessions" method="post">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+    <p>
+      <label>Email:</label>
+      <input type="email" name="email" />
+    </p>
+    <p>
+      <label>Password:</label>
+      <input type="password" name="password" />
+    </p>
+    <p>
+      <input type="submit" value="Login" />
+    </p>
+  </form>
+</fieldset>

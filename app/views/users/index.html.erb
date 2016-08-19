@@ -1,0 +1,29 @@
+<a href="/professional_profile">My Profile</a>
+<div class="ct">
+  <h3>Users you may want to connect with</h3>
+  <table>
+    <thead>
+      <th>
+        Name
+      </th>
+      <th>
+        Action
+      </th>
+    </thead>
+    <tbody>
+      <% @users.each do |user|%>
+      <% if not (@network.where(user:@me, connect:user).exists? || @network.where(user:user, connect:@me).exists?) %>
+      <tr>
+        <td>
+          <%= user.name %>
+        </td>
+        <td>
+          <a href="/networks/<%= user.id %>">Connect</a>
+        </td>
+      </tr>
+      <% end %>
+      <% end %>
+
+    </tbody>
+  </table>
+</div>

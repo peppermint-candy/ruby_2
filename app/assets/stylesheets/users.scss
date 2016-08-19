@@ -1,0 +1,35 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+fieldset.box {
+  min-height: 250px;
+  width: 400px;
+  border: 2px solid black;
+  vertical-align: top;
+  display: inline-block;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+div.box {
+  min-height: 40px;
+  width: 400px;
+  border: 3px solid lightblue;
+  vertical-align: top;
+  font-size: 14px;
+  padding: 10px;
+  overflow-y: auto;
+
+}
+
+div.ct {
+  height: 800px;
+  width: 950px;
+  vertical-align: top;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+table {
+  width: 400px;
+}

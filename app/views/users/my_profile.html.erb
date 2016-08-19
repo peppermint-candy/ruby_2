@@ -1,0 +1,64 @@
+
+<a href="/users">All User</a>
+<div class="ct">
+
+  <h1>Hi <%= @me.name %></!h1>
+
+  <div class="box">
+    <p>
+      <%= @me.description %>
+    </p>
+  </div>
+
+  <h3>Your Professional Network:</h3>
+  <div class="box">
+
+     <% @my_connects.each do |my_connect|  %>
+     <p>
+       <a href="/users/<%= my_connect.connect.id %>"><%= my_connect.connect.name  %></a>
+     </p>
+     <% end  %>
+
+     <% @am_connects.each do |am_connect|  %>
+     <p>
+       <a href="/users/<%= am_connect.user.id %>"><%= am_connect.user.name %></a>
+     </p>
+     <% end  %>
+
+  </div>
+
+  <h3>Invitations:</h3>
+  <p>
+    The following people asked you to be their network:
+  </p>
+
+  <table>
+    <thead>
+      <th>
+        Name
+      </th>
+      <th>
+        Action
+      </th>
+    </thead>
+    <tbody>
+         <% @pendings.each do |pending|  %>
+      <tr>
+        <td>
+          <p>
+            <a href='/users/<%= pending.user.id %>'><%= pending.user.name %></a>
+          </p>
+
+        </td>
+        <td>
+          <a href="/accept/<%= pending.user.id %>">Accept Invites</a>
+        </td>
+        <td>
+          <a href="/ignore/<%= pending.user.id %>">Ignore</a>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
